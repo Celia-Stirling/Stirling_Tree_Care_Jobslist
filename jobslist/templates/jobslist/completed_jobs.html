@@ -1,0 +1,27 @@
+{% extends './base.html' %}
+
+{% load static %}
+
+{% block head %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'jobslist/style.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<ul>
+    {% for job in job_list %}
+      {% if job.completed == True %}
+    <li>{{ job.customer }}</li>
+    <li>{{ job.street }}, {{ job.town }}, {{ job.postcode }}</li>
+    <li>{{ job.type }}</li>
+    <li>{{ job.description }}</li>
+    <li>£{{ job.price }}.00</li>
+    <li>{{ job.deadline }}</li>
+    <hr/>
+      {% endif %}
+    {% endfor %}
+</ul>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+{% endblock %}

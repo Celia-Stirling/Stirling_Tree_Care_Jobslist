@@ -10,23 +10,29 @@
 <header>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand ms-4" href="#">Stirling Tree Care</a>
+      <a class="navbar-brand ms-4" href="{% url 'home' %}">Stirling Tree Care</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item">
-            <a class="nav-link mx-4 active" aria-current="page" href="#">Home</a>
+            <a class="nav-link mx-4" href="{% url 'home' %}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-4" href="#">Jobs List</a>
+            <a class="nav-link mx-4" href="{% url 'jobs_list' %}">Outstanding Jobs</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-4" href="#">Customer List</a>
+            <a class="nav-link mx-4" href="{% url 'completed_jobs_list' %}">Completed Jobs</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-4" href="#">Completed Jobs</a>
+            <a class="nav-link mx-4" href="{% url 'customer_list' %}">Customer List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-4" href="#">Add Customer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-4" href="#">Add Job</a>
           </li>
           <li class="nav-item">
             <a class="nav-link mx-4" href="#">Login</a>
