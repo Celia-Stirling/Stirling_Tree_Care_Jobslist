@@ -12,6 +12,8 @@ class Customer(models.Model):
     email = models.EmailField(max_length=254)
     def __str__(self):
         return self.first_name + " " + self.last_name
+    def get_absolute_url(self):
+        return "list"
 
 class Job(models.Model):
     TYPE_CHOICES = [
@@ -40,3 +42,5 @@ class Job(models.Model):
         elif date.today() > self.deadline - timedelta(weeks=4):
             return "orange_date"
         return "green_date"
+    def get_absolute_url(self):
+            return "outstanding_jobs"
