@@ -3,6 +3,36 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+h1 {
+  text-align: center;
+  margin: 50px;
+}
+
+form {
+  background-color: #28df99;
+  border: 2px solid white;
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+label {
+  width: 25%;
+}
+
+.submit-button {
+  background-color: #99f3bd;
+  width: 15%;
+  padding: 10px;
+  display: block;
+  margin: 20px auto;
+}
+
+input, select, textarea {
+  margin: 10px;
+  width: 50%;
+}
+
 .brown_date {
   background-color: brown;
 }
