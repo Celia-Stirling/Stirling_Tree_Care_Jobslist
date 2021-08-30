@@ -17,7 +17,7 @@
     <li>{{ job.type }}</li>
     <li>{{ job.description }}</li>
     <li>£{{ job.price }}.00</li>
-    <li>{{ job.deadline }}</li>
+    <li class="{{ job.color_date }}">{{ job.deadline }}</li>
     <hr/>
       {% endif %}
     {% endfor %}

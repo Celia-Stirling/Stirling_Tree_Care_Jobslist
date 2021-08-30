@@ -1,5 +1,5 @@
 from django.db import models
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 
 def get_deadline():
     return datetime.today() + timedelta(days=42)
@@ -32,3 +32,11 @@ class Job(models.Model):
     paid = models.BooleanField(default=False)
     def __str__(self):
         return self.street + " " + self.town
+    def color_date(self):
+        if date.today() > self.deadline:
+            return "brown_date"
+        elif date.today() > self.deadline - timedelta(weeks=2):
+            return "red_date"
+        elif date.today() > self.deadline - timedelta(weeks=4):
+            return "orange_date"
+        return "green_date"

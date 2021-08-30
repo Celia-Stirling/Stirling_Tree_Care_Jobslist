@@ -2,3 +2,19 @@ body {
     background-color:#d2f6c5;
     font-family: 'Montserrat', sans-serif;
 }
+
+.brown_date {
+  background-color: brown;
+}
+
+.red_date {
+  background-color: red;
+}
+
+.orange_date {
+  background-color: orange;
+}
+
+.green_date {
+  background-color: green;
+}
