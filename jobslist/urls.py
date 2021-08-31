@@ -9,4 +9,6 @@ urlpatterns = [
   path("customer/list", views.CustomerList.as_view(), name="customer_list"),
   path("customer/create", views.CustomerCreate.as_view(), name="customer_create"),
   path("job/create", views.JobCreate.as_view(), name="job_create"),
+  path("customer/update/<pk>", views.CustomerUpdate.as_view(), name="customer_update"),
+  path("job/update/<pk>", views.JobUpdate.as_view(), name="job_update"),
 ]

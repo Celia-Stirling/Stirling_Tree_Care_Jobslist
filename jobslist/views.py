@@ -1,6 +1,7 @@
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from .models import Customer, Job
-from .forms import CustomerCreateForm, JobCreateForm
+from .forms import CustomerCreateForm, JobCreateForm, CustomerUpdateForm, JobUpdateForm
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
@@ -29,3 +30,15 @@ class JobCreate(CreateView):
     model = Job
     template_name = "jobslist/job_create_form.html"
     form_class = JobCreateForm
+
+class CustomerUpdate(UpdateView):
+    model = Customer
+    template_name = "jobslist/customer_update_form.html"
+    form_class = CustomerUpdateForm
+    success_url = reverse_lazy('customer_list')
+
+class JobUpdate(UpdateView):
+    model = Job
+    template_name = "jobslist/job_update_form.html"
+    form_class = JobUpdateForm
+    success_url = reverse_lazy('jobs_list')

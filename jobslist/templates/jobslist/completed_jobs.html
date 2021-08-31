@@ -18,6 +18,7 @@
     <li>{{ job.description }}</li>
     <li>£{{ job.price }}.00</li>
     <li>{{ job.deadline }}</li>
+    <li><a href="{% url 'job_update' job.id %}"><button>Edit</button></a></li>
     <hr/>
       {% endif %}
     {% endfor %}
