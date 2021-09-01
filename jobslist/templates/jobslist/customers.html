@@ -15,6 +15,7 @@
     <li>{{ customer.phone }}</li>
     <li>{{ customer.email }}</li>
     <li><a href="{% url 'customer_update' customer.id %}"><button>Edit</button></a></li>
+    <li><a href="{% url 'customer_delete' customer.id %}"><button>Delete</button></a></li>
     <hr/>
     {% endfor %}
 </ul>

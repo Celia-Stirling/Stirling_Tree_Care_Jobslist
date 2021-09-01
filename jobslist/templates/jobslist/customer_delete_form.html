@@ -9,21 +9,14 @@
 
 {% block content %}
 
-<ul>
-    {% for job in job_list %}
-      {% if job.completed == True %}
-    <li>{{ job.customer }}</li>
-    <li>{{ job.street }}, {{ job.town }}, {{ job.postcode }}</li>
-    <li>{{ job.type }}</li>
-    <li>{{ job.description }}</li>
-    <li>£{{ job.price }}.00</li>
-    <li>{{ job.deadline }}</li>
-    <li><a href="{% url 'job_update' job.id %}"><button>Edit</button></a></li>
-    <li><a href="{% url 'job_delete' job.id %}"><button>Delete</button></a></li>
-    <hr/>
-      {% endif %}
-    {% endfor %}
-</ul>
+<h1>Delete Customer</h1>
+
+<form method="POST">
+  {% csrf_token %}
+  <p>Are you sure you want to delete the customer "{{ customer.first_name }} {{ customer.last_name}}"?</p>
+  <p>This will delete all of this customer's completed and outstanding jobs.</p>
+  <input class="submit-button" type="submit" value="Delete"/>
+</form>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 {% endblock %}

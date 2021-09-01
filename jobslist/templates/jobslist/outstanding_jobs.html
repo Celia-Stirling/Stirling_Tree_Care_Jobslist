@@ -19,6 +19,7 @@
     <li>£{{ job.price }}.00</li>
     <li class="{{ job.color_date }}">{{ job.deadline }}</li>
     <li><a href="{% url 'job_update' job.id %}"><button>Edit</button></a></li>
+    <li><a href="{% url 'job_delete' job.id %}"><button>Delete</button></a></li>
     <hr/>
       {% endif %}
     {% endfor %}

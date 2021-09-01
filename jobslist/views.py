@@ -42,3 +42,13 @@ class JobUpdate(UpdateView):
     template_name = "jobslist/job_update_form.html"
     form_class = JobUpdateForm
     success_url = reverse_lazy('jobs_list')
+
+class CustomerDelete(DeleteView):
+    model = Customer
+    template_name = "jobslist/customer_delete_form.html"
+    success_url = reverse_lazy('customer_list')
+
+class JobDelete(DeleteView):
+    model = Job
+    template_name = "jobslist/job_delete_form.html"
+    success_url = reverse_lazy('jobs_list')
