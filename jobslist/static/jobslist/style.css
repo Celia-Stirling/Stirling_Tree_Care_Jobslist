@@ -64,6 +64,26 @@ input, select, textarea {
   width: 50%;
 }
 
+table, th, td {
+  border: 2px solid #000;
+  text-align: center;
+  color: #000;
+}
+
+table {
+  width: 90%;
+  margin: 50px auto;
+}
+
+th {
+  background-color: #f6c5d2;
+  padding: 15px;
+}
+
+td {
+  padding: 10px;
+}
+
 .brown_date {
   background-color: brown;
 }
