@@ -1,6 +1,7 @@
 body {
     background-color:#d2f6c5;
     font-family: 'Montserrat', sans-serif;
+    color: #454545;
 }
 
 h1 {
@@ -14,7 +15,8 @@ h2 {
 
 .link-tile {
   border: 1px solid black;
-  background-color: #b7c5ff;
+  background-color: #f6c5d2;
+  color: #454545;
   width: 90%;
   height: 220px;
   margin-right: auto;
@@ -23,6 +25,10 @@ h2 {
   margin-top: 20px;
   font-family: Helvetica;
   padding: 10px;
+}
+
+.inner-link-tile {
+  width: 100%;
 }
 
 .link-tile-container {
@@ -34,7 +40,7 @@ a {
 }
 
 form {
-  background-color: #28df99;
+  background-color: #f6c5d2;
   border: 2px solid white;
   width: 80%;
   margin: 20px auto;
@@ -45,8 +51,8 @@ label {
   width: 25%;
 }
 
-.submit-button {
-  background-color: #99f3bd;
+.submit-button, .login-button {
+  background-color: #28df99;
   width: 15%;
   padding: 10px;
   display: block;
