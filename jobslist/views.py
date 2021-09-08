@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from .models import Customer, Job
 from .forms import CustomerCreateForm, JobCreateForm, CustomerUpdateForm, JobUpdateForm
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.decorators import login_required
@@ -59,3 +59,7 @@ class JobDelete(LoginRequiredMixin, DeleteView):
     model = Job
     template_name = "jobslist/job_delete_form.html"
     success_url = reverse_lazy('jobs_list')
+
+class CustomerDetails(LoginRequiredMixin, DetailView):
+    model = Customer
+    template_name = "jobslist/customer_details.html"

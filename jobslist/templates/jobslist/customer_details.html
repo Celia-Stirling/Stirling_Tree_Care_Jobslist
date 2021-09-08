@@ -1,0 +1,57 @@
+{% extends './base.html' %}
+
+{% load static %}
+
+{% block head %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'jobslist/style.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<h1>{{ customer.first_name }} {{ customer.last_name }}</h1>
+<p class="customer-details">Phone: {{ customer.phone }}</p>
+<p class="customer-details">Email: {{ customer.email }}</p>
+
+<table>
+  <tr>
+    <th>Address</th>
+    <th>Job Type</th>
+    <th>Description</th>
+    <th>Price</th>
+    <th>Completed</th>
+    <th>Paid</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+    {% for job in customer.job_set.all %}
+  <tr>
+    <td>{{ job.street }}, {{ job.town }}, {{ job.postcode }}</td>
+        {% if job.type == 'T' %}
+    <td>Tree</td>
+        {% elif job.type == 'M' %}
+    <td>Mixed</td>
+        {% elif job.type == 'H' %}
+    <td>Hedge</td>
+        {% endif %}
+    <td>{{ job.description }}</td>
+    <td>£{{ job.price }}.00</td>
+        {% if job.completed == True %}
+    <td>Yes</td>
+        {%elif job.completed == False %}
+    <td>No</td>
+        {% endif %}
+        {% if job.paid == True %}
+    <td>Yes</td>
+        {%elif job.paid == False %}
+    <td>No</td>
+        {% endif %}
+    <td><a href="{% url 'job_update' job.id %}"><button>Edit</button></a></td>
+    <td><a href="{% url 'job_delete' job.id %}"><button>Delete</button></a></td>
+  </tr>
+    {% endfor %}
+</table>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+{% endblock %}
