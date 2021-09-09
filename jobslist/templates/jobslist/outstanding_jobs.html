@@ -9,6 +9,8 @@
 
 {% block content %}
 
+<h1>Outstanding Jobs</h1>
+
 <table>
   <tr>
     <th>Customer</th>
@@ -23,7 +25,7 @@
     {% for job in job_list %}
       {% if job.completed == False %}
   <tr class="{{ job.color_date }}">
-    <td>{{ job.customer }}</td>
+    <td><a href="{% url 'customer_details' job.customer.id %}">{{ job.customer }}</a></td>
     <td>{{ job.street }}, {{ job.town }}, {{ job.postcode }}</td>
         {% if job.type == 'T' %}
     <td>Tree</td>

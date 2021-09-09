@@ -9,6 +9,8 @@
 
 {% block content %}
 
+<h1>Completed Jobs - Awaiting Payment</h1>
+
 <table>
   <tr>
     <th>Customer</th>
@@ -21,9 +23,9 @@
     <th>Delete</th>
   </tr>
     {% for job in job_list %}
-      {% if job.completed == True %}
+      {% if job.completed == True and job.paid == False %}
   <tr>
-    <td>{{ job.customer }}</td>
+    <td><a href="{% url 'customer_details' job.customer.id %}">{{ job.customer }}</a></td>
     <td>{{ job.street }}, {{ job.town }}, {{ job.postcode }}</td>
         {% if job.type == 'T' %}
     <td>Tree</td>
@@ -34,11 +36,7 @@
         {% endif %}
     <td>{{ job.description }}</td>
     <td>£{{ job.price }}.00</td>
-        {% if job.paid == True %}
-    <td>Yes</td>
-        {%elif job.paid == False %}
     <td>No</td>
-        {% endif %}
     <td><a href="{% url 'job_update' job.id %}"><button>Edit</button></a></td>
     <td><a href="{% url 'job_delete' job.id %}"><button>Delete</button></a></td>
   </tr>

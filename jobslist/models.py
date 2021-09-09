@@ -11,9 +11,11 @@ class Customer(models.Model):
     phone = models.CharField(max_length=30)
     email = models.EmailField(max_length=254)
     def __str__(self):
-        return self.first_name + " " + self.last_name
+        return self.last_name + ", " + self.first_name
     def get_absolute_url(self):
         return "list"
+    class Meta:
+        ordering = ["last_name"]
 
 class Job(models.Model):
     TYPE_CHOICES = [
