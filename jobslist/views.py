@@ -63,3 +63,7 @@ class JobDelete(LoginRequiredMixin, DeleteView):
 class CustomerDetails(LoginRequiredMixin, DetailView):
     model = Customer
     template_name = "jobslist/customer_details.html"
+
+class JobDetails(LoginRequiredMixin, DetailView):
+    model = Job
+    template_name = "jobslist/job_details.html"

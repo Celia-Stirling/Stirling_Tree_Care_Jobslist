@@ -1,0 +1,40 @@
+{% extends './base.html' %}
+
+{% load static %}
+
+{% block head %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'jobslist/style.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<h1>Job Details</h1>
+
+<p>Customer: <a href="{% url 'customer_details' job.customer.id %}">{{ job.customer.first_name }} {{ job.customer.last_name }}</a></p>
+<p>Phone: {{ job.customer.phone }}</p>
+<p>Email: {{ job.customer.email }}</p>
+<p>Address: {{ job.street }}, {{ job.town }}, {{ job.postcode }}</p>
+    {% if job.type == 'T' %}
+<p>Job Type: Tree</p>
+    {% elif job.type == 'M' %}
+<p>Job Type: Mixed</p>
+    {% elif job.type == 'H' %}
+<p>Job Type: Hedge</p>
+    {% endif %}
+<p>Price: £{{ job.price }}.00</p>
+<p>Deadline: {{ job.deadline }}</p>
+  {% if job.paid == True %}
+<p>Paid: Yes</p>
+  {% elif job.paid == False %}
+<p>Paid: No</p>
+  {% endif %}
+
+<p>Description:</p>
+<p>{{ job.description }}</p>
+
+<a href="{% url 'job_update' job.id %}"><button>Edit</button></a>
+<a href="{% url 'job_delete' job.id %}"><button>Delete</button></a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+{% endblock %}

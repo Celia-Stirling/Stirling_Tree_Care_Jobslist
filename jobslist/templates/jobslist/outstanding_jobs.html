@@ -16,16 +16,14 @@
     <th>Customer</th>
     <th>Address</th>
     <th>Job Type</th>
-    <th>Description</th>
     <th>Price</th>
     <th>Deadline</th>
-    <th>Edit</th>
-    <th>Delete</th>
+    <th>Details</th>
   </tr>
     {% for job in job_list %}
       {% if job.completed == False %}
   <tr class="{{ job.color_date }}">
-    <td><a href="{% url 'customer_details' job.customer.id %}">{{ job.customer }}</a></td>
+    <td><a href="{% url 'customer_details' job.customer.id %}">{{ job.customer.first_name }} {{ job.customer.last_name }}</a></td>
     <td>{{ job.street }}, {{ job.town }}, {{ job.postcode }}</td>
         {% if job.type == 'T' %}
     <td>Tree</td>
@@ -34,11 +32,9 @@
         {% elif job.type == 'H' %}
     <td>Hedge</td>
         {% endif %}
-    <td>{{ job.description }}</td>
     <td>£{{ job.price }}.00</td>
     <td>{{ job.deadline }}</td>
-    <td><a href="{% url 'job_update' job.id %}"><button>Edit</button></a></td>
-    <td><a href="{% url 'job_delete' job.id %}"><button>Delete</button></a></td>
+    <td><a href="{% url 'job_details' job.id %}"><button>Details</button></a></td>
   </tr>
       {% endif %}
     {% endfor %}

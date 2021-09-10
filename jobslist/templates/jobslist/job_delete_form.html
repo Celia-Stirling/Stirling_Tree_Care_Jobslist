@@ -13,7 +13,8 @@
 
 <form method="POST">
   {% csrf_token %}
-  <p>Are you sure you want to delete the job at {{ job.street }}, {{ job.town }}, {{ job.postcode }} for {{ job.customer }}"?</p>
+  <p>Are you sure you want to delete the job at {{ job.street }}, {{ job.town }}, {{ job.postcode }} for {{ job.customer.first_name }} {{ job.customer.last_name }}?</p>
+  <p>If you have completed the job, or the job has been paid, go to <a href="{% url 'job_update' job.id %}">"edit"</a> instead.</p>
   <input class="submit-button" type="submit" value="Delete"/>
 </form>
 

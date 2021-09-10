@@ -15,5 +15,6 @@ urlpatterns = [
   path("job/update/<pk>", views.JobUpdate.as_view(), name="job_update"),
   path("customer/delete/<pk>", views.CustomerDelete.as_view(), name="customer_delete"),
   path("job/delete/<pk>", views.JobDelete.as_view(), name="job_delete"),
-  path("customer/details/<pk>", views.CustomerDetails.as_view(), name="customer_details")
+  path("customer/details/<pk>", views.CustomerDetails.as_view(), name="customer_details"),
+  path("job/details/<pk>", views.JobDetails.as_view(), name="job_details")
 ]
