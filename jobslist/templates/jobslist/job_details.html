@@ -10,7 +10,7 @@
 {% block content %}
 
 <h1>Job Details</h1>
-<div class="job-details-container">
+<div class="{{ job.color_date }} job-details-container">
   <p><span class="job-details-headings">Customer:</span> <a href="{% url 'customer_details' job.customer.id %}">{{ job.customer.first_name }} {{ job.customer.last_name }}</a></p>
   <p><span class="job-details-headings">Phone:</span> {{ job.customer.phone }}</p>
   <p><span class="job-details-headings">Email:</span> {{ job.customer.email }}</p>

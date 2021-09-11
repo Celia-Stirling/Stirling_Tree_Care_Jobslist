@@ -37,7 +37,9 @@ class Job(models.Model):
     def __str__(self):
         return self.street + " " + self.town
     def color_date(self):
-        if date.today() > self.deadline:
+        if self.completed == True:
+            return "no_date"
+        elif date.today() > self.deadline:
             return "brown_date"
         elif date.today() > self.deadline - timedelta(weeks=2):
             return "red_date"

@@ -24,7 +24,7 @@
     <th>Details</th>
   </tr>
     {% for job in customer.job_set.all %}
-  <tr>
+  <tr class="{{ job.color_date }}">
     <td>{{ job.street }}, {{ job.town }}, {{ job.postcode }}</td>
         {% if job.type == 'T' %}
     <td>Tree</td>
