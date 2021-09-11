@@ -14,16 +14,14 @@
     <th>Name</th>
     <th>Phone</th>
     <th>Email</th>
-    <th>Edit</th>
-    <th>Delete</th>
+    <th>Details</th>
   </tr>
     {% for customer in customer_list %}
   <tr>
     <td><a href="{% url 'customer_details' customer.id %}">{{ customer.last_name }}, {{ customer.first_name}}</a></td>
     <td>{{ customer.phone }}</td>
     <td>{{ customer.email }}</td>
-    <td><a href="{% url 'customer_update' customer.id %}"><button>Edit</button></a></td>
-    <td><a href="{% url 'customer_delete' customer.id %}"><button>Delete</button></a></td>
+    <td><a href="{% url 'customer_details' customer.id %}"><button>Details</button></a></td>
   </tr>
     {% endfor %}
 </table>

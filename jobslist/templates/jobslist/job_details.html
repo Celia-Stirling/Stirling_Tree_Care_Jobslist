@@ -10,31 +10,36 @@
 {% block content %}
 
 <h1>Job Details</h1>
-
-<p>Customer: <a href="{% url 'customer_details' job.customer.id %}">{{ job.customer.first_name }} {{ job.customer.last_name }}</a></p>
-<p>Phone: {{ job.customer.phone }}</p>
-<p>Email: {{ job.customer.email }}</p>
-<p>Address: {{ job.street }}, {{ job.town }}, {{ job.postcode }}</p>
+<div class="job-details-container">
+  <p><span class="job-details-headings">Customer:</span> <a href="{% url 'customer_details' job.customer.id %}">{{ job.customer.first_name }} {{ job.customer.last_name }}</a></p>
+  <p><span class="job-details-headings">Phone:</span> {{ job.customer.phone }}</p>
+  <p><span class="job-details-headings">Email:</span> {{ job.customer.email }}</p>
+  <p><span class="job-details-headings">Address:</span> {{ job.street }}, {{ job.town }}, {{ job.postcode }}</p>
     {% if job.type == 'T' %}
-<p>Job Type: Tree</p>
+  <p><span class="job-details-headings">Job Type:</span> Tree</p>
     {% elif job.type == 'M' %}
-<p>Job Type: Mixed</p>
+  <p><span class="job-details-headings">Job Type:</span> Mixed</p>
     {% elif job.type == 'H' %}
-<p>Job Type: Hedge</p>
+  <p><span class="job-details-headings">Job Type:</span> Hedge</p>
     {% endif %}
-<p>Price: £{{ job.price }}.00</p>
-<p>Deadline: {{ job.deadline }}</p>
-  {% if job.paid == True %}
-<p>Paid: Yes</p>
-  {% elif job.paid == False %}
-<p>Paid: No</p>
-  {% endif %}
-
-<p>Description:</p>
-<p>{{ job.description }}</p>
-
-<a href="{% url 'job_update' job.id %}"><button>Edit</button></a>
-<a href="{% url 'job_delete' job.id %}"><button>Delete</button></a>
+  <p><span class="job-details-headings">Price:</span> £{{ job.price }}.00</p>
+  <p><span class="job-details-headings">Date Created:</span> {{ job.date_created }}</p>
+  <p><span class="job-details-headings">Deadline:</span> {{ job.deadline }}</p>
+    {% if job.completed == True %}
+  <p><span class="job-details-headings">Completed:</span> Yes</p>
+    {% elif job.completed == False %}
+  <p><span class="job-details-headings">Completed:</span> No</p>
+    {% endif %}
+    {% if job.paid == True %}
+  <p><span class="job-details-headings">Paid:</span> Yes</p>
+    {% elif job.paid == False %}
+  <p><span class="job-details-headings">Paid:</span> No</p>
+    {% endif %}
+  <p><span class="job-details-headings">Description:</span></p>
+  <p>{{ job.description }}</p>
+  <a href="{% url 'job_update' job.id %}"><button>Edit Job</button></a>
+  <a href="{% url 'job_delete' job.id %}"><button>Delete Job</button></a>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 {% endblock %}
