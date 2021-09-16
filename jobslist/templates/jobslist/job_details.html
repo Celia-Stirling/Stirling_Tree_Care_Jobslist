@@ -12,8 +12,8 @@
 <h1>Job Details</h1>
 <div class="{{ job.color_date }} job-details-container">
   <p><span class="job-details-headings">Customer:</span> <a href="{% url 'customer_details' job.customer.id %}">{{ job.customer.first_name }} {{ job.customer.last_name }}</a></p>
-  <p><span class="job-details-headings">Phone:</span> {{ job.customer.phone }}</p>
-  <p><span class="job-details-headings">Email:</span> {{ job.customer.email }}</p>
+  <p><span class="job-details-headings">Phone:</span><a href="tel:{{ job.customer.phone }}"> {{ job.customer.phone }}</a></p>
+  <p><span class="job-details-headings">Email:</span><a href = "mailto:{{ job.customer.email }}"> {{ job.customer.email }}</a></p>
   <p><span class="job-details-headings">Address:</span> {{ job.street }}, {{ job.town }}, {{ job.postcode }}</p>
     {% if job.type == 'T' %}
   <p><span class="job-details-headings">Job Type:</span> Tree</p>

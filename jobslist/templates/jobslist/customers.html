@@ -9,19 +9,21 @@
 
 {% block content %}
 
-<table>
+<h1>Customer List</h1>
+
+<table id="customers-table">
   <tr>
     <th>Name</th>
     <th>Phone</th>
     <th>Email</th>
-    <th>Details</th>
+    <th>Jobs</th>
   </tr>
     {% for customer in customer_list %}
   <tr>
-    <td><a href="{% url 'customer_details' customer.id %}">{{ customer.last_name }}, {{ customer.first_name}}</a></td>
-    <td>{{ customer.phone }}</td>
-    <td>{{ customer.email }}</td>
-    <td><a href="{% url 'customer_details' customer.id %}"><button>Details</button></a></td>
+    <td>{{ customer.last_name }}, {{ customer.first_name}}</td>
+    <td><a href="tel:{{ customer.phone }}">{{ customer.phone }}</a></td>
+    <td><a href = "mailto:{{ customer.email }}">{{ customer.email }}</a></td>
+    <td><a href="{% url 'customer_details' customer.id %}"><button>Jobs</button></a></td>
   </tr>
     {% endfor %}
 </table>

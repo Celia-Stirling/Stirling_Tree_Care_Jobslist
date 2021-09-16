@@ -10,8 +10,8 @@
 {% block content %}
 
 <h1>{{ customer.first_name }} {{ customer.last_name }}</h1>
-<p class="customer-details">Phone: {{ customer.phone }}</p>
-<p class="customer-details">Email: {{ customer.email }}</p>
+<p class="customer-details"><a href="tel:{{ customer.phone }}">Phone: {{ customer.phone }}</a></p>
+<p class="customer-details"><a href = "mailto:{{ customer.email }}">Email: {{ customer.email }}</a></p>
 
 <h2>Jobs For This Customer</h2>
 <table>

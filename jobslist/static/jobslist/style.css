@@ -25,6 +25,7 @@ h2 {
   margin-top: 20px;
   font-family: Helvetica;
   padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .inner-link-tile {
@@ -89,6 +90,7 @@ table, th, td {
 table {
   width: 90%;
   margin: 50px auto;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 th {
@@ -100,22 +102,26 @@ td {
   padding: 10px;
 }
 
+#customers-table td {
+  background-color: #d4ebf2;
+}
+
 .no_date {
   background-color: #FFF;
 }
 
 .brown_date {
-  background-color: brown;
+  background-color: #e08b3e;
 }
 
 .red_date {
-  background-color: red;
+  background-color: #ff0000;
 }
 
 .orange_date {
-  background-color: orange;
+  background-color: #ffbf00;
 }
 
 .green_date {
-  background-color: green;
+  background-color: #00ff00;
 }
