@@ -4,6 +4,7 @@
 
 {% block head %}
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Lato&family=Lobster&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{% static 'jobslist/style.css' %}">
 {% endblock %}
 
@@ -31,7 +32,7 @@
       <a href="{% url 'customer_create' %}"><div class="d-flex text-center link-tile">
         <div class="align-self-center inner-link-tile">
           <h3>Add a Customer</h3>
-          <p>Start here! Click here to add your customer's basic details. If the customer is already in the database, go straight to "Add a Job"</p>
+          <p>Start here! Once your customer is in the database, go to "Add a Job".</p>
         </div>
       </div></a>
     </div>
@@ -47,7 +48,7 @@
       <a href="{% url 'jobs_list' %}"><div class=" d-flex text-center link-tile">
         <div class="align-self-center inner-link-tile">
           <h3>Outstanding Jobs</h3>
-          <p>See you outstanding jobs, with colour coded deadlines. Once you've completed a job, don't forget to tick the "completed" box in the edit tab!</p>
+          <p>Your outstanding jobs, with colour coded deadlines.</p>
         </div>
       </div></a>
     </div>
@@ -55,7 +56,7 @@
       <a href="{% url 'completed_jobs_list' %}"><div class="d-flex text-center link-tile">
         <div class="align-self-center inner-link-tile">
           <h3>Completed Jobs</h3>
-          <p>Click here to check the details of any jobs you have already completed, which are waiting for payment</p>
+          <p>Check the details of any completed jobs which are waiting for payment.</p>
         </div>
       </div></a>
     </div>
@@ -63,7 +64,7 @@
       <a href="{% url 'customer_list' %}"><div class="d-flex text-center link-tile">
         <div class="align-self-center inner-link-tile">
           <h3>Customer List</h3>
-          <p>Click here to check or edit customer details</p>
+          <p>Click here to check or edit customer details.</p>
         </div>
       </div></a>
     </div>
