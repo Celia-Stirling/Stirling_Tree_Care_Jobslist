@@ -19,4 +19,4 @@ class CustomerUpdateForm(forms.ModelForm):
 class JobUpdateForm(forms.ModelForm):
   class Meta:
     model = Job
-    fields = ("customer", "street", "town", "postcode", "type", "description", "price", "deadline", "completed", "paid")
+    fields = ("customer", "street", "town", "postcode", "type", "description", "price", "deadline", "date_completed", "paid")

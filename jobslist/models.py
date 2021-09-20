@@ -32,12 +32,12 @@ class Job(models.Model):
     price = models.IntegerField()
     date_created = models.DateField(auto_now_add=True)
     deadline = models.DateField(default=get_deadline)
-    completed = models.BooleanField(default=False)
+    date_completed = models.DateField(null=True, blank=True)
     paid = models.BooleanField(default=False)
     def __str__(self):
         return self.street + " " + self.town
     def color_date(self):
-        if self.completed == True:
+        if self.date_completed != None:
             return "no_date"
         elif date.today() > self.deadline:
             return "brown_date"

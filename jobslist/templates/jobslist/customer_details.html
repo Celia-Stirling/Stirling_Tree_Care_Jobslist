@@ -35,10 +35,10 @@
     <td>Hedge</td>
         {% endif %}
     <td>£{{ job.price }}.00</td>
-        {% if job.completed == True %}
-    <td>Yes</td>
-        {%elif job.completed == False %}
-    <td>No</td>
+        {% if job.date_completed == None %}
+    <td>Outstanding</td>
+        {% else %}
+    <td>{{ job.date_completed }}</td>
         {% endif %}
         {% if job.paid == True %}
     <td>Yes</td>

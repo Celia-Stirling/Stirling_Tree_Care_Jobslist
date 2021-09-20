@@ -11,7 +11,7 @@
 {% block content %}
 
 <h1>Outstanding Jobs</h1>
-<p>Don't forget - once you've completed a job, go to "Details" then "Edit" and tick the "completed" box.</p>
+<p>Don't forget - once you've completed a job, go to "Details" then "Edit" and date the "completed" box.</p>
 
 <table>
   <tr>
@@ -23,7 +23,7 @@
     <th>Details</th>
   </tr>
     {% for job in job_list %}
-      {% if job.completed == False %}
+      {% if job.date_completed == None %}
   <tr class="{{ job.color_date }}">
     <td><a href="{% url 'customer_details' job.customer.id %}">{{ job.customer.first_name }} {{ job.customer.last_name }}</a></td>
     <td>{{ job.street }}, {{ job.town }}, {{ job.postcode }}</td>

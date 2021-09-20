@@ -26,10 +26,10 @@
   <p><span class="job-details-headings">Price:</span> £{{ job.price }}.00</p>
   <p><span class="job-details-headings">Date Created:</span> {{ job.date_created }}</p>
   <p><span class="job-details-headings">Deadline:</span> {{ job.deadline }}</p>
-    {% if job.completed == True %}
-  <p><span class="job-details-headings">Completed:</span> Yes</p>
-    {% elif job.completed == False %}
-  <p><span class="job-details-headings">Completed:</span> No</p>
+    {% if job.date_completed == None %}
+  <p><span class="job-details-headings">Date Completed:</span> Outstanding</p>
+    {% else %}
+  <p><span class="job-details-headings">Date Completed:</span> {{ job.date_completed}}</p>
     {% endif %}
     {% if job.paid == True %}
   <p><span class="job-details-headings">Paid:</span> Yes</p>

@@ -22,7 +22,7 @@
     <th>Details</th>
   </tr>
     {% for job in job_list %}
-      {% if job.completed == True and job.paid == False %}
+      {% if job.date_completed != None and job.paid == False %}
   <tr class="{{ job.color_date }}">
     <td><a href="{% url 'customer_details' job.customer.id %}">{{ job.customer.first_name }} {{ job.customer.last_name }}</a></td>
     <td>{{ job.street }}, {{ job.town }}, {{ job.postcode }}</td>
