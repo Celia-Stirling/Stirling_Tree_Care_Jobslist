@@ -9,7 +9,7 @@ class CustomerCreateForm(forms.ModelForm):
 class JobCreateForm(forms.ModelForm):
   class Meta:
     model = Job
-    fields = ("customer", "street", "town", "postcode", "type", "description", "price", "deadline")
+    fields = ("customer", "street", "town", "postcode", "type", "flexibility", "description", "price", "deadline")
 
 class CustomerUpdateForm(forms.ModelForm):
   class Meta:
@@ -19,4 +19,4 @@ class CustomerUpdateForm(forms.ModelForm):
 class JobUpdateForm(forms.ModelForm):
   class Meta:
     model = Job
-    fields = ("customer", "street", "town", "postcode", "type", "description", "price", "deadline", "date_completed", "paid")
+    fields = ("customer", "street", "town", "postcode", "type", "flexibility", "description", "price", "deadline", "date_completed", "paid")

@@ -24,6 +24,13 @@
   <p><span class="job-details-headings">Job Type:</span> Hedge</p>
     {% endif %}
   <p><span class="job-details-headings">Price:</span> £{{ job.price }}.00</p>
+  {% if job.flexibility == 'E' %}
+<p><span class="job-details-headings">Customer Flexibility:</span> Easy</p>
+  {% elif job.flexibility == 'S' %}
+<p><span class="job-details-headings">Customer Flexibility:</span> Standard</p>
+  {% elif job.flexibility == 'A' %}
+<p><span class="job-details-headings">Customer Flexibility:</span> Awkward</p>
+  {% endif %}
   <p><span class="job-details-headings">Date Created:</span> {{ job.date_created }}</p>
   <p><span class="job-details-headings">Deadline:</span> {{ job.deadline }}</p>
     {% if job.date_completed == None %}

@@ -18,7 +18,7 @@
     <th>Customer</th>
     <th>Address</th>
     <th>Job Type</th>
-    <th>Price</th>
+    <th>Customer Flexibility</th>
     <th>Deadline</th>
     <th>Details</th>
   </tr>
@@ -34,7 +34,13 @@
         {% elif job.type == 'H' %}
     <td>Hedge</td>
         {% endif %}
-    <td>£{{ job.price }}.00</td>
+        {% if job.flexibility == 'E' %}
+    <td>Easy</td>
+        {% elif job.flexibility == 'S' %}
+    <td>Standard</td>
+        {% elif job.flexibility == 'A' %}
+    <td>Awkward</td>
+        {% endif %}
     <td>{{ job.deadline }}</td>
     <td><a href="{% url 'job_details' job.id %}"><button>Details</button></a></td>
   </tr>

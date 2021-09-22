@@ -23,11 +23,17 @@ class Job(models.Model):
     ("H", "Hedge"),
     ("M", "Mixed"),
     ]
+    FLEXIBILITY_CHOICES = [
+    ("E", "Easy"),
+    ("S", "Standard"),
+    ("A", "Awkward"),
+    ]
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
     street = models.CharField(max_length=100)
     town = models.CharField(max_length=50)
     postcode = models.CharField(max_length=10)
     type = models.CharField(max_length=1, choices=TYPE_CHOICES)
+    flexibility = models.CharField(max_length=1, choices=FLEXIBILITY_CHOICES, default="S")
     description = models.TextField()
     price = models.IntegerField()
     date_created = models.DateField(auto_now_add=True)
