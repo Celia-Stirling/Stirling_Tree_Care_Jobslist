@@ -23,7 +23,7 @@
   <tr>
     <td>{{ customer.last_name }}, {{ customer.first_name}}</td>
     <td><a href="tel:{{ customer.phone }}">{{ customer.phone }}</a></td>
-    <td><a href = "mailto:{{ customer.email }}">{{ customer.email }}</a></td>
+    <td>{% if customer.email %}<a href = "mailto:{{ customer.email }}">{{ customer.email }}</a>{% endif %}</td>
     <td><a href="{% url 'customer_details' customer.id %}"><button>Jobs</button></a></td>
   </tr>
     {% endfor %}
